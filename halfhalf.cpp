@@ -3,24 +3,26 @@
 
 int main() {
     // Write C++ code here
-    int cnt = 10;
-    int dv = 2;
-    int rn = cnt/dv;
-    int mn = cnt-rn;
+    int cnt = 10; //counter
+    int dv = 2; //divisor
+    int rn = cnt/dv; //initial remainder
+    int mn = cnt-rn; //difference bet. intial remainder and counter
     for(int i=0; i<cnt; i++){
-        if(i<rn){
+        //does something for the first half of divisor
+        if(i<rn){ 
             std::cout << i;
             std::cout << "\n";
         }
+        //recalculate the new remainder
         else{
-            i--;
-            rn = rn + (mn/dv);
+            i--; //backset loop counter 
+            rn = rn + (mn/dv); 
             mn = mn-(mn/dv);
             
             //std::cout << mn;
             std::cout << "--\n";
         }
-        if(mn<dv)
+        if(mn<dv) //breaks loop bug if diff is less than divisor
             break;
     }
 
