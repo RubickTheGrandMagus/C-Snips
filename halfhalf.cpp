@@ -17,9 +17,11 @@ int main() {
             rn = rn + (mn/dv);
             mn = mn-(mn/dv);
             
-            //std::cout << rn;
-            std::cout << "\n";
+            //std::cout << mn;
+            std::cout << "--\n";
         }
+        if(mn<dv)
+            break;
     }
 
     return 0;
