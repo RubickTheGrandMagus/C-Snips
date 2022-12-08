@@ -3,18 +3,18 @@
 
 int main() {
     // Write C++ code here
-    int cnt = 10; //counter
+        int cnt = 10; //counter
     int dv = 2; //divisor
     int rn = cnt/dv; //initial remainder
     int mn = cnt-rn; //difference bet. intial remainder and counter
     for(int i=0; i<cnt; i++){
         //does something for the first half of divisor
-        if(i<rn){ 
+        if(i<rn || (mn<=dv && i<cnt)){ 
             std::cout << i;
             std::cout << "\n";
         }
         //recalculate the new remainder
-        else{
+        else if(mn>dv){
             i--; //backset loop counter 
             rn = rn + (mn/dv); 
             mn = mn-(mn/dv);
@@ -22,9 +22,6 @@ int main() {
             //std::cout << mn;
             std::cout << "--\n";
         }
-        if(mn<dv) //breaks loop bug if diff is less than divisor
-            break;
     }
-
     return 0;
 }
